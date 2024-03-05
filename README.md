@@ -3,7 +3,10 @@ This Java program implements a classic Hi-Lo guessing game. Users attempt to gue
 
 Key features:
 
-Interactive gameplay with user prompts and feedback.
-Repeatable gameplay with clear restart options.
-Utilizes Scanner for user input and Random for number generation.
-Well-structured and readable code with comments.
+-Interactive gameplay with user prompts and feedback.
+
+-Repeatable gameplay with clear restart options.
+
+-Utilizes Scanner for user input and Random for number generation.
+
+-Well-structured and readable code with comments.
