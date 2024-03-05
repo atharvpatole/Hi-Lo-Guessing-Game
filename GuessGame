@@ -1,0 +1,38 @@
+import java.util.*;
+
+class GuessGame {
+    public static void main(String[] args) {
+        boolean playGame = true;
+        while (playGame) {  // Game loop continues until the user quits
+            Scanner scanner = new Scanner(System.in);
+            Random random = new Random();  // Generate a random number between 0 and 99 (inclusive)
+            int myNumber = Math.abs(random.nextInt() % 100);
+
+            int numOfGuesses = 0;
+            while (true) {  // Inner loop for each game round
+                System.out.println("Guess a number between 0 and 99: ");
+                int guess = scanner.nextInt();
+                numOfGuesses++;
+
+                if (guess == -1) {
+                    System.out.println("Quitting the game.");
+                    break;
+                } else if (guess == myNumber) {  // Check for correct guess
+                    System.out.println("Congratulations. You guessed the correct number: " + myNumber + " It took you " + numOfGuesses + " guesses.\n" + "Would you like to play again? Enter -1 to quit, 1 to play again.");
+                    int response = scanner.nextInt();
+                    if (response == -1) {  // Update playGame flag based on user's choice
+                        playGame = false;
+                        break;
+                    } else {
+                        playGame = true;
+                    }
+                } else if (guess > myNumber) {  // Provide feedback for high or low guesses
+                    System.out.println("Your guess is too high! Try again.");
+                } else {
+                    System.out.println("Your guess is too low! Try again.");
+                }
+            }
+            scanner.close();
+        }
+    }
+}
